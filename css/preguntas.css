@@ -1,0 +1,46 @@
+.icon-bubbles:before {
+  content: "\e96c";
+}
+.icon-bubbles{
+	font-size: 30px;
+	color: black
+}
+.contenedor-preguntas{
+	margin-top: 125px;
+	margin-bottom: 125px;
+	margin-left: 50px;
+	
+	color:black;
+}
+.preguntas-titulo{
+	display: flex;
+	flex-direction: row;
+}
+dd{
+	color: black;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.preguntas-flex{
+	display: flex;
+	flex-direction: row;
+	margin-top: 15px;
+	flex-wrap: wrap;
+	align-items: baseline;
+
+}
+dl{
+	width: 400px;
+	margin-right: 20px;
+}
+h1{
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 850px) {
+	.contenedor-preguntas{
+		margin-left: 10px;
+		margin-top: 50px;
+	}
+	
+}

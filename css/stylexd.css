@@ -1,0 +1,78 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'fuente';
+}
+@font-face {
+			font-family: 'fuente';
+			src: url('../font/gillsansstd-light.otf');
+			font-weight: normal;
+			font-style: normal;
+			}
+body{
+	background: #eaeaea;
+	margin: 0;
+}
+input{	
+	outline: none;
+}
+	html{
+	position: relative;
+}
+.stockprod{
+	padding-top:30px;
+	padding-left: 30px;
+
+	color: black;
+
+}
+footer{
+	position: absolute;
+	bottom: 0;
+}
+
+
+
+hr{
+	margin-left: 1.5%;
+	margin-right:5%;
+}
+.productos{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px;
+	width: 100%;
+}
+#stock{
+	padding-top: 60px;
+	padding-bottom: 35px;
+	
+}
+h2{
+	font-family: 'fuente';
+}
+
+
+@media screen and (max-width: 850px) {
+
+	
+.productos{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	
+	
+}
+	#stock{
+		margin-top: 20px;
+	}
+	.stockprod{
+		font-size: 20px;
+	}
+
+}
+

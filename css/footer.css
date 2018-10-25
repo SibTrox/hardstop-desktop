@@ -1,0 +1,121 @@
+
+#footer{
+	margin-top:50px;
+	position: static;
+	background: #585858;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+    padding: 25px 25px;
+	box-shadow:5px 5px 50px 3px #000;
+	color: #fff;
+	font-size: 18px;
+	
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	
+}
+
+
+.footer4{
+	display: flex;
+	flex-direction: column;
+	border-left: 1px solid white;
+	padding-left: 25px;
+}
+.footercontacto{
+	display: flex;
+	flex-direction:column;
+}
+.footericon{
+	padding-top: 25px;
+	display:flex;
+	flex-direction: row;
+}
+
+.afooter{
+	color: #fff;
+ 	text-decoration: none;
+	
+	width: 18px;
+	height: 18px;
+	margin-right: 10px;
+}
+.form-control, select {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 1em;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.footer-enviar{
+	transition-property: background-color, color;
+    transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	border-radius: 38px 38px 38px 38px;
+-moz-border-radius: 38px 38px 38px 38px;
+-webkit-border-radius: 38px 38px 38px 38px;
+border: 0px solid #000000;
+  -webkit-appearance: none;
+  color: #555;
+    background-color: #fff;
+    width: 30%;
+	height: 30px;
+	
+
+
+}
+.footer-text{
+	padding-bottom: 3px;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 5px;
+
+
+}
+.footer-enviar:hover{
+	transition-property: background-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	background-color: #898989;
+	color: #fff;
+}
+.link-footer{
+	color: #fff;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+	#footer{
+	position: relative;
+	background: #585858;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+    padding: 25px 25px;
+	box-shadow:5px 5px 50px 3px #000;
+	color: #fff;
+	font-size: 18px;
+	margin: 0;	}
+	.footer-text{
+		margin-top: 25px;
+	}
+	.footericon{
+		justify-content: center;
+		bottom: 0;
+	}
+	.footer4{
+		border: 0px solid #000;
+		padding-left: 0;
+	}
+}
