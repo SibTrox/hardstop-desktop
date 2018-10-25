@@ -1,5 +1,77 @@
 .gen{
+  margin-top: 5%;
+ 
+}
+.imgprod{
+    background-color: #fff;
+}
+.productosinfo{
+   margin-top: 5%;
+   margin-left: 10%;
+   
+}
+.prodtodo{
     display: flex;
     flex-direction: row;
-    justify-content:center; 
+    justify-content: flex-start;
+    margin-left: 11%;
+}
+.nombreprod{
+    font-size: 40px;
+    font-weight: bold;
+}
+.stock{
+    margin-top: 15%;
+    font-weight: bold;
+    font-size: 22px;
+    
+}
+.precio{
+    margin-top: 19%;
+    font-size: 35px;
+    color: #197fca;
+    letter-spacing: 4px;
+    margin-bottom: 10.99%;
+    font-weight: bold;
+
+}
+.botoncompra{
+    text-align: center;
+    background-color: #197fca;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border: none;
+
+
+}
+.botoncompra:hover{
+    border:2px solid #197fca;
+    color: #197fca;
+    background-color: #fff;
+    
+}
+.productosinfo input{
+    width: 100%;
+    height: 13%;
+
+}
+.desc{
+    color: #000;
+    margin-left: 11%;
+}
+hr{
+    margin: 0;
+    width: 70%;
+}
+.tdesc{
+    margin-top: 7%;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.infodesc{
+   font-size: 19px;
+   margin-top: 2%;
 }
