@@ -48,13 +48,17 @@
 		
 	</div></div><div class="ws_script" style="position:absolute;left:-99%"></div>
 	<div class="ws_shadow"></div>
-	</div>	
+	</div>
+		
+	<div class="triangulo1"></div>
+	<div class="triangulo2"></div>
+	
 	<script type="text/javascript" src="engine1/wowslider.js"></script>
 	<script type="text/javascript" src="engine1/script.js"></script>
 	</div>
 	<div id="stock">
 		<h2 class="stockprod">NUEVOS PRODUCTOS EN STOCK</h2>
-		<hr  noshade="noshade" size="1" color="black" />
+		<hr  noshade="noshade" size="1" color="black" class="linea3" />
 		<div class="productos">
 					<?php
 					include("sql/conexion.php");
@@ -78,7 +82,11 @@
 
 				</div>
 	</div>
-	
+	<div class="triangulo3"></div>
+	<div class="triangulo4"></div>
+	<div class="barraazul">
+
+	</div>
 	<?php include("includes/footer.html"); ?>
 		
 	</div>

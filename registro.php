@@ -100,7 +100,7 @@
         			$insertar = $conexion->query($xd);
         			echo '<script type="text/javascript">
         			alert("Registro exitoso, sera redirigido despues de esto");
-                    window.location="http://hardstop.000webhostapp.com/index.php";
+                    window.location="http://localhost/public_html/index.php";
                     </script>';
     		    }else{
     		    echo "<script> alert('Uno de los parametros ingresados es incorrecto, por favor, intentelo de nuevo')</script>";

@@ -21,7 +21,7 @@ input{
 	position: relative;
 }
 .stockprod{
-	padding-top:30px;
+	
 	padding-left: 30px;
 
 	color: black;
@@ -34,7 +34,7 @@ footer{
 
 
 
-hr{
+.linea3{
 	margin-left: 1.5%;
 	margin-right:5%;
 }
@@ -47,12 +47,65 @@ hr{
 	width: 100%;
 }
 #stock{
-	padding-top: 60px;
+	
 	padding-bottom: 35px;
 	
 }
 h2{
 	font-family: 'fuente';
+}
+
+.triangulo1{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 100px 30px 0 0;
+	
+border-color: #197fca transparent transparent transparent;
+
+}
+.triangulo2{
+	width: 0;
+		height: 0;
+	border-style: solid;
+	border-width: 0 30px 100px 0;
+	border-color: transparent #197fca transparent transparent;
+	position: absolute;
+	right: 0%;
+	top: 30%;
+}
+.barraazul{
+	background-size:100%;
+	position: absolute;
+	left:0%;
+	cursor: default;
+	top:85%;
+	width:100%;
+	height:3%;
+	z-index:-1;
+	background-color: #197fca;
+}
+.triangulo3{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 100px 0 0 30px;
+	border-color: transparent transparent transparent #197fca;
+	position: absolute;
+	left: 0%;
+	top: 80%;
+
+}
+.triangulo4{
+	width: 0;
+	height: 0;
+border-style: solid;
+border-width: 0 0 100px 30px;
+border-color: transparent transparent #197fca transparent;
+position: absolute;
+	right: 0%;
+	top: 80%;
+
 }
 
 

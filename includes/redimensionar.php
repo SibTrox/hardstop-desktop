@@ -2,7 +2,7 @@
 
 function redimensionarImagen($foto,$ancho_f,$alto_f,$desplazamiento){
 	list($ancho_org, $alto_org, $nrotipo) = getimagesize($foto);
-    	echo "<script>alert('FUNCA 2');</script>";
+    
 switch ($nrotipo) {
 		case 1:
 			$img_original=imagecreatefromgif($foto);
@@ -48,7 +48,7 @@ switch ($nrotipo) {
 	$nombre_img=time()."-".$foto;
 	imagejpeg($nueva_img,"../img/prod/$nombre_img",$calidad);
 	return $nombre_img;	
-	echo "<script>alert('FUNCA 2');</script>";
+	
 }
 
 

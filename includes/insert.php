@@ -37,7 +37,7 @@ if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
 $sql="INSERT INTO productos (nombre,descripcion,imagen,precio,stock,tipo) VALUES ('$nombre','$desc','$img','$precio','$stock','$tipo')";
 
 $insertar=$conexion->query($sql)? $m=1 : $m=2;
-echo "<script>alert('funca');</script>";
-//echo "<script>window.location='../abm.php'</script>";
+
+echo "<script>window.location='../abm.php'</script>";
 
 ?>

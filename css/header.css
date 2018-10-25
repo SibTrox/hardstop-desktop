@@ -6,6 +6,7 @@ header{
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: row;
+	position: relative;
 
 }
 .cajaheader{
@@ -17,9 +18,9 @@ header{
 }
 .img1{
 	position: absolute;
-	width:27%;
+	width:auto;
 	left: 1%;
-	height: 6.5%;
+	height: 100%;
 
 }
 
