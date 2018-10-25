@@ -1,18 +1,12 @@
-"use strict";
-(function() {
-    var $boton_usuario = document.getElementById('usuario');
-
-    /*var login = document.getElementById("login");
-    var header = document.getElementById("header");
-    $boton_usuario.onclick = function(event) {
-        event.preventDefault();
-        
-        login.className = login.className.replace(/\bocultar\b/g, "");
-    }
-    function loginHarstop() {
+    function usuarioLoggeado () {
+        let boton = document.getElementById('usuario')
+        document.getElementById('usuario-oculto').id = 'usuario'
+        boton.id = 'usuario-oculto'
+        document.getElementById('opciones').classList.add('ocultar')
+        document.getElementById('formulario-inicio').classList.add('ocultar')
 
     }
 
-
-*/
-})();
+    function usuarioErroneo () {
+        swal ( "Oops" ,  "Tu usuario y/o contraseña no es correcta!" ,  "error" )
+    }

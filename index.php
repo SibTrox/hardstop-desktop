@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/prodinfo.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/main.js"></script>
 	<style type="text/css">
 		
 		.ocultar{
@@ -29,7 +31,7 @@
 </head>
 <body>
 	<div id="container">
-	<?php include("includes/header.html"); ?>
+	<?php include("includes/header.php"); ?>
 	<?php include("includes/nav.html"); ?>
 	
 	<div id="slider" style="background-color:transparent;margin:0">
@@ -80,8 +82,6 @@
 	<?php include("includes/footer.html"); ?>
 		
 	</div>
-	<script src="js/login.js"></script>
-<script src="js/main.js"></script>
 <div style=display:none;>
 </body>
 </html>
