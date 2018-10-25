@@ -75,3 +75,7 @@ border: 0px solid #000000;
     color: #fff;
     
 }
+
+#usuario-oculto{
+    display: none;
+}

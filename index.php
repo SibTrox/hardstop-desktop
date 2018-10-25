@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/prodinfo.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/main.js"></script>
 	<style type="text/css">
 		
 		.ocultar{
@@ -80,8 +82,6 @@
 	<?php include("includes/footer.html"); ?>
 		
 	</div>
-	<script src="js/login.js"></script>
-<script src="js/main.js"></script>
 <div style=display:none;>
 </body>
 </html>

@@ -13,13 +13,14 @@
 					<a href=""><img src="img/carrito.png" class="img3"></a>
 					<input type="checkbox" name="activar3" id="activar3">
 					<a href="#"><img  id="usuario" src="img/user.png" class="img4" for="activar3"></a>
+					<a href="#"><img  id="usuario-oculto" src="img/user-logged.png" class="img4" for="activar3"></a>
 				</div>
 			</div>
 			
 		</div>	
 		<div id="login"  class="arrow_box" style="display: none;">	
 					
-						<form action="#" class="form-login" method="post">
+						<form id="formulario-inicio" action="#" class="form-login" method="post">
 							<input type="email" name="mail" class="form-css" placeholder="E-mail">
 							<input type="password" name="pw" class="form-css" placeholder="Contraseña">
 							<div class="toggler">
@@ -38,7 +39,7 @@
 							</div>
 							<input type="submit" name="submit" class="login-enviar" value="Iniciar sesion">
 						</form>
-						<div class="login-links">	
+						<div id="opciones" class="login-links">	
 							<a href="registro.php" class="opciones">Registrarse</a>
 							<a href="" class="opciones">Olvide la contraseña</a>
 						</div>
@@ -50,9 +51,11 @@
 			$sql = "SELECT * FROM registros WHERE password = '".$_REQUEST['pw']."' AND mail = '".$_REQUEST['mail']."'";
 			$consulta = $conexion->query($sql);
 			if($consulta->num_rows>0){
+				echo "<script> usuarioLoggeado() </script>";
 				session_start();
 				$_SESSION['usuario'] = $_REQUEST['mail'];
-				echo "<script> alert ('".$_SESSION['usuario']."') </script> ";
+			}else{
+				echo "<script> usuarioErroneo() </script>";
 			}
 		}
 	?>
