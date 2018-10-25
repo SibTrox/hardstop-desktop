@@ -1,0 +1,26 @@
+<form action="../includes/insert.php" method="post" class="forminsert" enctype="multipart/form-data">
+	<img src="img/logo.png" class="logo">
+	<input type="text" class="inputform" name="nombre" required="required" placeholder="Nombre">
+	<textarea name="descripcion" rows="5" cols="300" placeholder="Descripcion" class="texta"></textarea>
+	<input type="text" name="precio" required="required" min="0" placeholder="Precio" class="inputform">
+	<input type="number" name="stock" required="required" min="0" class="inputform" placeholder="Stock">
+	<select name="tipo" class="select">
+	
+		<option value="2">CPU</option>
+		<option value="3">Coolers</option>
+		<option value="4">Mothers y combos</option>
+		<option value="5">RAM</option>
+		<option value="6">GPU</option>
+		<option value="7">Fuente</option>
+		<option value="8">Almacenamiento</option>
+		<option value="9">Monitores</option>
+		<option value="10">Perifericos</option>
+		<option value="11">Gabinete</option>
+		<option value="12">PC Hogar & Oficina</option>
+		<option value="13">PC Gamer</option>
+		<option value="14">BATTLEBOX</option>
+		<option value="15">GAMERBOX</option>
+	</select>
+	<input type="file" name="imagen" >
+	<input type="image" name="insertar" value="insertar" class="boton" src="img/enviarboton.png">
+</form>
