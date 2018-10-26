@@ -3,6 +3,10 @@ table {
     width: 100%;
 
 }
+.imgabm{
+    width: auto;
+    height: 30%;
+}
 
 th, td {
     padding: 8px;

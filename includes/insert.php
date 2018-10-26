@@ -20,8 +20,8 @@ if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
 
 	$directorio = 'img/prod/';
 	$foto=$_FILES['imagen']['name'];
-	$maxAncho = 300;
-	$maxAlto=150;
+	$maxAncho = 700;
+	$maxAlto=700;
 
 	move_uploaded_file($_FILES['imagen']['tmp_name'], $foto);
 	$img=redimensionarImagen($foto,$maxAncho,$maxAlto,'center');
