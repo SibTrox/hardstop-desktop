@@ -19,6 +19,7 @@
 	<LINK REL=StyleSheet HREF="css/login.css"> 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="js/main.js"></script>
 	<style type="text/css">
 		
