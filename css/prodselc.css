@@ -1,9 +1,11 @@
 .gen{
-  
- 
+    height: 400px;
+    width: auto;
 }
 .imgprod{
     background-color: #fff;
+    width: auto;
+    height: 100%;
 }
 .prodinfo{
    display: flex;
@@ -118,8 +120,9 @@
 		transition-property: margin;
 		transition-timing-function: linear;
 		transition-duration: 0.3s;
-		width:220px;
-		height:130px;
+        width: 70%;
+        height: auto;
+        margin-left: 13%;
 		margin-bottom: 20px;
 
 }
