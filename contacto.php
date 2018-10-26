@@ -16,10 +16,17 @@
 	<LINK REL=StyleSheet HREF="css/nav.css">
 	<LINK REL=StyleSheet HREF="css/header.css">
 	<LINK REL=StyleSheet HREF="css/contacto.css">
+	<LINK REL=StyleSheet HREF="css/login.css"> 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
-	<LINK REL=StyleSheet HREF="css/login.css"> 
-	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/main.js"></script>
+	<style type="text/css">
+		
+		.ocultar{
+        	display: none;
+        }
+	</style>
 </head>
 <body>
 <div id="container">
