@@ -17,12 +17,17 @@
 	<LINK REL=StyleSheet HREF="css/footer.css">
 	<LINK REL=StyleSheet HREF="css/nav.css">
 	<LINK REL=StyleSheet HREF="css/header.css">
+	<LINK REL=StyleSheet HREF="css/login.css"> 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/prodinfo.css">
-	<LINK REL=StyleSheet HREF="css/login.css"> 
+	<script src="js/main.js"></script>
 	<link rel="shortcut icon" href="img/favicon.ico" />
-	<link>
-	
+	<style type="text/css">
+		
+		.ocultar{
+        	display: none;
+        }
+	</style>
 </head>
 <body>
 	<div id="container">
@@ -94,8 +99,6 @@
 	<?php include("includes/footer.html"); ?>
 		
 </div>
-<script src="js/login.js"></script>
-<script src="js/main.js"></script>
 <div style=display:none;>
 </body>
 </html>

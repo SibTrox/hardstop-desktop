@@ -15,11 +15,18 @@
 	<LINK REL=StyleSheet HREF="css/stylexd.css">
 	<LINK REL=StyleSheet HREF="css/footer.css">
 	<LINK REL=StyleSheet HREF="css/nav.css">
+	<LINK REL=StyleSheet HREF="css/login.css"> 
 	<LINK REL=StyleSheet HREF="css/header.css">
 	<link rel="stylesheet" href="css/preguntas.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
-	<LINK REL=StyleSheet HREF="css/login.css"> 
+	<script src="js/main.js"></script>
+	<style type="text/css">
+		
+		.ocultar{
+        	display: none;
+        }
+	</style>
 </head>
 <body>
 	<div id="container">

@@ -15,10 +15,17 @@
 	<LINK REL=StyleSheet HREF="css/footer.css">
 	<LINK REL=StyleSheet HREF="css/nav.css">
 	<LINK REL=StyleSheet HREF="css/header.css">
+	<LINK REL=StyleSheet HREF="css/login.css"> 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/prodselc.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
-	
+	<script src="js/main.js"></script>
+	<style type="text/css">
+		
+		.ocultar{
+        	display: none;
+        }
+	</style>
 	
 </head>
 <body>
