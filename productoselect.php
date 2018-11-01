@@ -51,6 +51,7 @@
 					
 					while($registro = $consul->fetch_assoc()){
 					if ($_REQUEST['c']==$registro['id_producto']){
+						$_SESSION['id_producto'] = $registro['id_producto'];
 					?>
 					<div id="cajatodo" class="cajatodo">
 						<div class="prodtodo">
@@ -61,7 +62,11 @@
 								<p class="nombreprod"><?php echo $registro['nombre'];?></p>
 								<p class="stock">STOCK : <?php echo $registro['stock']; ?></p>
 								<div class="abajo">
-									<p class="precio">PRECIO $<?php echo $precio = $registro['precio']; ?></p>
+									<p class="precio">PRECIO $
+										<?php echo $registro['precio']; 
+												$_SESSION['precio'] = $registro['precio'];
+										?>
+									</p>
 									<form action="#" method="get">
 										<input name="compra" type="submit" class="botoncompra" value="COMPRAR">
 									</form>
@@ -169,8 +174,14 @@
 						$selventa = $conexion->query($selecuser);
 						while($userven = $selventa->fetch_assoc()){
 							
-							$insertvet="INSERT INTO ventas(fecha,id_usuario) VALUES ('$fechaventa','".$userven["id_registro"]."')";
+							$insertvet="INSERT INTO ventas(fecha,id_usuario,total) VALUES ('$fechaventa','".$userven["id_registro"]."','".$_SESSION["precio"]."')";
 							$insertven = $conexion->query($insertvet);
+							$seleccionar = "SELECT id_venta FROM ventas ORDER BY id_venta DESC LIMIT 1";
+							$conter = $conexion->query($seleccionar);
+							while($cuevas = $conter->fetch_assoc()){
+								$xd = "INSERT INTO prodxventa(cant,id_venta,id_prod) VALUES (1,'".$cuevas['id_venta']."','".$_SESSION['id_producto']."')";
+								$insertarxd = $conexion->query($xd);
+							}
 						}
 						
 						

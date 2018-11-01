@@ -324,7 +324,7 @@ break;
 				<td><?php echo $registro['id_prod']; ?> </td>
 				<td class="editarborrar"><?php echo $registro['cant']; ?> </td>
 				<td class="editarborrar"><?php echo $registro['total']; ?> </td>
-				<td class="editarborrar"><?php echo $registro['id_ventas']; ?> </td>
+				<td class="editarborrar"><?php echo $registro['id_venta']; ?> </td>
 				
 				
 		
