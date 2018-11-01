@@ -1,56 +1,48 @@
+.imagen-header{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+
 h1{
 	text-align: center;
 }
+.caja-header{
+	width: 40%;
+}
 .forminsert{
-	
 	display: flex;
-    justify-content: center;
-    align-items: center;
-	text-align: center;
-	padding-bottom: 10px;
-	background-color: #197FCA;
-	 border: 2px solid;
-	border-radius: 7px;
-	margin-bottom: 15px;
-	padding-top: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content:space-around;
+	
+}
+.boxinput{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	
+
 }
 .inputform{
-	margin-left:10px;
-	margin-right:10px;
-	box-sizing: border-box;
-    border: 2px solid;
-	border-radius: 7px;
-	width: 100%;
-	height: 30px;
-	padding-left: 5px;
-	margin:20px;
 	
 }
 .imgboton{
-	width: 30px; height: 30px;
-
+	width: 30px;
+	height: 30px;
 }
 .select{
-	border: none;
-    border-radius: 4px;
-    background-color: #f2f2f2;
-    width: 100px;
-    margin-right: 20px;
-    border: 2px solid;
 }
-
 .boton{
 	margin-right: 10px;
 	width: 30px; 
 	height: 30px;
 }
 .texta{
-	box-sizing: border-box;
-	border: 2px solid;
-	border-radius: 7px;
-	margin-left:10px;
-	margin-right:10px;
 	resize: none;
+	width: 200px;
+	height: 100px;
 }
 .selectfiltro{
 	border: none;
@@ -67,12 +59,51 @@ h1{
 	padding: 10px 10px;
 	background-color: #197FCA;
 	 border: 2px solid;
-	border-radius: 7px;
 	margin-bottom: 10px;
 }
 .logo{
-	width: 100px;
-	height: 100px;
+	width: auto;
+	height: 150px;
 	margin-left: 10px;
-		
+}
+
+.caja-body{
+	display: flex;
+}
+
+.upload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+  }
+  .inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+	background-color: #197FCA;
+	height: 30px;
+	display: inline-block;
+	margin: 0px 10px 10px 10px;
+	transition-property: background-color;
+	transition-timing-function: linear;
+	transition-duration: 1s;
+	padding: 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+	transition-property: background-color;
+	transition-timing-function: linear;
+	transition-duration: 1s;
+    background-color: darkblue;
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
 }

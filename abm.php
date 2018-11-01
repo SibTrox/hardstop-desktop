@@ -8,6 +8,10 @@ require_once("sql/conexion.php");
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/form.css">
 	<link rel="stylesheet" type="text/css" href="css/table.css">
+	<link rel="stylesheet" type="text/css" href="css/abm.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	
+	
 	<title>Administracion productos</title>
 	
 
@@ -15,10 +19,19 @@ require_once("sql/conexion.php");
 <body>
 <div id="contenedor">
 
-<header></header>
+<header>
+	<div class="imagen-header">
+	<img src="img/logohd.png" class="logo">
+	<?php
+	include("includes/form.html");
+	?>
+	</div>
+</header>
 <?php
-include("includes/form.html");
 
+?><div class="caja-body">
+	<?php
+include("includes/menu.html");
 if (isset($_POST['insertar'])) {
     
 	include("includes/insert.php");
@@ -32,7 +45,9 @@ if(isset($_POST['modificar'])){
 	include("includes/edit.php");
 }
 include("includes/tabla.php");
-
+?>
+</div>
+<?php
 
 if(isset($m)){
 	switch ($m) {
@@ -60,4 +75,5 @@ if(isset($m)){
 <div style=display:none;>
 
 </body>
+
 </html>
