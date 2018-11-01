@@ -1,5 +1,10 @@
-<?php 
-require_once("sql/conexion.php");
+<?php
+session_start();
+if(isset($_SESSION['admin'])){
+	require_once("sql/conexion.php");
+}else{
+	header('Location: login-abm.php');
+}
 
 ?>
  <!DOCTYPE html>
