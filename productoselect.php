@@ -78,7 +78,7 @@
 						<hr  noshade="noshade" size="1" color="black" class="linea2"/>
 						<div class="prodcajatodo">
 							<?php
-							$selcat="SELECT * FROM productos WHERE tipo='".$registro['tipo']."' LIMIT 3";
+							$selcat="SELECT * FROM productos WHERE tipo='".$registro['tipo']."' LIMIT 5";
 							$select = $conexion->query($selcat);
 						
 							while($registrocat = $select->fetch_assoc()){
@@ -99,6 +99,8 @@
 								}
 								
 							}
+							
+						//setcookie("precio", $registro['precio']);
 						}
 						?>
 
@@ -162,6 +164,16 @@
 		echo "<script> window.location = 'index.php' </script>";
 	}
 	if(isset($_REQUEST['proceder'])){
+						$fechaventa=date('y/m/d');
+						$selecuser="SELECT id_registro FROM registros WHERE mail='".$_SESSION['usuario']."'";
+						$selventa = $conexion->query($selecuser);
+						while($userven = $selventa->fetch_assoc()){
+							
+							$insertvet="INSERT INTO ventas(fecha,id_usuario) VALUES ('$fechaventa','".$userven["id_registro"]."')";
+							$insertven = $conexion->query($insertvet);
+						}
+						
+						
 						echo "<script> document.getElementById('terminacompra').classList.remove('ocultar') </script>";
 						echo '<script> swal(
 							"Gracias por confiar en Hardstop!",

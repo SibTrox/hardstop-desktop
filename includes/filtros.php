@@ -10,9 +10,9 @@ switch ($tabla) {
 	case 2:
 		$sql="SELECT * FROM registros ORDER BY $orden";
 		break;
-	case 3:
+	/*case 3:
 		$sql="SELECT * FROM ventas ORDER BY $orden";
-		break;
+		break;*/
 	default:
 		# code...
 		break;
@@ -30,7 +30,11 @@ else
 			$sql="SELECT * FROM registros";
 			break;
 		case 3:
-			$sql="SELECT * FROM ventas";
+			$sql="SELECT p.id_prodxventa , p.cant , p.id_ventas , p.id_prod , v.fecha , v.id_usuario , v.total , v.id_venta 
+			FROM prodxventa p
+			JOIN ventas	v
+			ON p.id_ventas = v.id_venta";
+			
 			break;
 		default:
 			# code...
@@ -74,4 +78,5 @@ if(isset($_GET['buscar']) && !isset($_GET['tipo'])){
 
 
 $consulta=$conexion->query($sql);
+
 ?>

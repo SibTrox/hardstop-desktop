@@ -275,7 +275,66 @@ if(!isset($_REQUEST['tabla'])){
 		}else{
 			echo "tabla vacia";
 		}
-break;					
+break;
+	case 3:
+	?>
+					<table border="2">
+					<?php
+					if(isset($_GET['grupo'])){
+					?>
+					<tr class="trmain">
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=id_registro">ID</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=mail"></a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=nombre">Nombre</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=apellido">Apellido</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=calle">Calle</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=provincia">Provincia</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=partido">Partido</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=localidad">Localidad</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=cp">Codigo Postal</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=tel">Telefono</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=dni">DNI</a></th>
+							<th><a href="abm.php?tipo=<?php echo $_GET['tipo']?>&&c=fecha">Fecha</a></th>
+					</tr>
+					
+					<?php		
+					}else{
+					
+					?>
+						<tr class="trmain">
+						<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=id_registro">ID</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=mail">Usuario</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=mail">Fecha</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=nombre">Producto</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=apellido">Cantidad</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=calle">Total</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=calle">Numero de venta</a></th>
+					
+						</tr>
+					
+					<?php
+					}
+		if($consulta->num_rows>0){
+			while($registro = $consulta->fetch_assoc()){
+		?>
+		<tr>
+				<td class="editarborrar"><?php echo $registro['id_prodxventa']; ?> </td>
+				<td><?php echo $registro['id_usuario']; ?> </td>
+				<td><?php echo $registro['fecha']; ?> </td>
+				<td><?php echo $registro['id_prod']; ?> </td>
+				<td class="editarborrar"><?php echo $registro['cant']; ?> </td>
+				<td class="editarborrar"><?php echo $registro['total']; ?> </td>
+				<td class="editarborrar"><?php echo $registro['id_ventas']; ?> </td>
+				
+				
+		
+		</tr>	
+		<?php
+		}
+		}else{
+			echo "tabla vacia";
+		}
+		break;					
 	default:
 		# code...
 		break;
