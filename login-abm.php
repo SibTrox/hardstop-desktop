@@ -9,7 +9,6 @@
 </head>
 <body>
 	<div class="contenedor">
-    <audio src="gemidos.mp3" controls></audio>
         <img src="img/logoHD.png" class="img">
 	   	<div id="login">
 	   		<form action="#" method="post">
@@ -28,6 +27,8 @@
 		if($_REQUEST['user'] === 'administrador' && $_REQUEST['pw'] === 'h4rdst0p'){
             $_SESSION['admin'] = $_REQUEST['user'];
             header('Location: abm.php');
+        }else{
+            echo "<script> alert('Su usuario y/o contraseña es incorrecta') </script>";
         }
 	} 
 ?>
