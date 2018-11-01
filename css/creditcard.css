@@ -243,3 +243,21 @@ body {
   margin: auto;
   background: #ddd;
 }
+.buyfinal{
+  width: 260px;
+  height: 50px;
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: none;
+  background: #42C2DF;
+  color: white;
+  font-size: 20px;
+  transition: background 0.4s;
+  cursor: pointer;
+}
+.buyfinal:hover{
+  background: #3594A9;
+  transition: background 0.4s;
+}

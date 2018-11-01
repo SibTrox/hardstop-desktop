@@ -63,7 +63,7 @@
 								<div class="abajo">
 									<p class="precio">PRECIO $<?php echo $precio = $registro['precio']; ?></p>
 									<form action="#" method="get">
-										<input name="comprar" type="submit" class="botoncompra" value="COMPRAR">
+										<input name="compra" type="submit" class="botoncompra" value="COMPRAR">
 									</form>
 									<img class="medios" src="img/medios.PNG">
 								</div>
@@ -127,7 +127,7 @@
 		</div>
 	</div>
 	<div class="col2">
-		<form action="#" method="post">
+		<form action="#" method="get">
 			<label>Numero de tarjeta</label>
 			<input class="number" required type="text" ng-model="ncard" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
 			<label>Nombre impreso en su tarjeta</label>
@@ -142,15 +142,40 @@
 	</div>
 <h2 style="text-align: center; margin-bottom: 2%;"> Totalmente seguro </h1>
 </div>
+<div id="terminacompra" class="ocultar">
+<h1 style="text-align: center; margin-top: 2%; margin-bottom:5%;">¿ Esta seguro de finalizar la compra ?</h1>
+	<form method="get" action="#">
+		<input type="submit" name="proceder" class="buyfinal" value="Terminar pago">
+		<input type="submit" name="cancelar" class="buyfinal" value="Cancelar">
+	</form>
+<h2 style="text-align: center;padding-top:10%;"> Al finalizar la compra, recibira todos los datos de su compra en su email </h2>
+<h2 style="text-align: center;"> Si aun tiene dudas , consulte el apartado de preguntas frecuentes </h2>
+<h2 style="text-align: center;margin-buttom:7%;"> Si no encuentra su duda , comuniquese con nosotros en el apartado de contacto</h2>
+</div>
 					
 				
 				
 	<?php 
 	include("includes/footer.html");
-	if(isset($_REQUEST['creditcard'])){
-		
+	if(isset($_REQUEST['cancelar'])){
+		echo "<script> document.getElementById('terminacompra').classList.remove('ocultar') </script>";
+		echo "<script> window.location = 'index.php' </script>";
 	}
-	if(isset($_REQUEST['comprar'])){
+	if(isset($_REQUEST['proceder'])){
+						echo "<script> document.getElementById('terminacompra').classList.remove('ocultar') </script>";
+						echo '<script> swal(
+							"Gracias por confiar en Hardstop!",
+							"En breve recibiras mas informaciones sobre tu compra en tu correo electronico!",
+							"success"
+							)
+							.then((value) => {
+								window.location = "index.php" 
+							}) </script> ';
+	}
+	if(isset($_REQUEST['creditcard'])){
+		echo "<script> ocultarCajaTarjeta() </script>";
+	}
+	if(isset($_REQUEST['compra'])){
 		echo "<script> ocultarCajaCompra() </script>";
 
 		if($_SESSION['usuario']){
@@ -158,9 +183,9 @@
 
 		}else{
 			echo '<script> swal ( "Oops" ,  "Debes iniciar sesion antes de realizar esta accion!" ,  "error" )
-							.then((value) => {
-								window.location = "index.php" 
-							}) </script> ';
+			.then((value) => {
+				window.location = "index.php" 
+			}) </script> ';
 		}
 	}
 	?>

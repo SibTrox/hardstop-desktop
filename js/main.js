@@ -15,6 +15,11 @@
         document.getElementById('creditcard').classList.remove('ocultar')
     }
 
+    function ocultarCajaTarjeta () {
+        document.getElementById('creditcard').classList.add('ocultar')
+        document.getElementById('terminacompra').classList.remove('ocultar')
+    }
+
     function preguntarPorUsuarioLoggeado () {
         let user = window.sessionStorage.getItem("user")
         if (user == null){

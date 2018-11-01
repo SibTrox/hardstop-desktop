@@ -1,0 +1,43 @@
+*{
+	box-sizing: border-box;
+}
+#login{
+    width: 50%;
+    position: fixed;
+    left:35%;
+    top: 25%;
+
+}
+#login form{
+	border: 1px solid #000;
+	width: 55%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+}
+#usuario,#pw{
+		border:2px solid #2471A3 ;
+	width: 86%;
+	height: 30px;
+	padding: 10px;
+	margin-top: 2px;
+	margin-left: 7%;
+}
+#submit{
+	width: 25%;
+	margin-left: 7%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+
+}
+form label{
+	margin-left: 7%;
+	font-weight: bold;
+
+}
+img{
+    display:block;
+    margin:auto;
+    width: 27%;
+}
