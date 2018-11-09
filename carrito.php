@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/prodselc.css">
 	<link rel="stylesheet" href="css/creditcard.css">
+	<link rel="stylesheet" href="css/carrito.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -41,11 +42,17 @@
 	<div id="container">
 	<?php include("includes/header.php");?>
     <?php include("includes/nav.html"); ?>
-    <h2 class="stockprod">CARRITO </h2>
+    <h2 class="stockprod titulo">CARRITO </h2>
     <hr  noshade="noshade" size="1" color="black" class="linea3" />
     <?php
         if(!isset($_SESSION['usuario'])){
-            
+            ?> 
+			<div class="carrito-nosesion">
+			<h1> Lo sentimos! </h1>
+			<h2> Pero para poder acceder al carrito, primero debe iniciar sesión </h2>
+			<h2> Si todavia no posee una cuenta en HardStop, <a href="registro.php"> registrese haciendo click aqui </a> </h2>
+			</div>
+			<?php
         }else{
                 if(isset($_GET['id_suma'])){
                     sumarCantidad($_GET['id_suma']);

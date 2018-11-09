@@ -69,7 +69,7 @@
 									</p>
 									<form action="#" method="get" class="formu-compra">
 										<input name="compra" type="submit" class="botoncompra" value="COMPRAR">
-										<a class="botoncarrito" href='productoselect.php?c=<?php echo $_SESSION["id_producto"] ?>&&prod-carrito=<?php echo $_SESSION["id_producto"] ?>'> Agregar al carrito </a>
+										<a  style="text-decoration:none" class="botoncarrito" href='productoselect.php?c=<?php echo $_SESSION["id_producto"] ?>&&prod-carrito=<?php echo $_SESSION["id_producto"] ?>'> Agregar al carrito </a>
 									</form>
 									<img class="medios" src="img/medios.PNG">
 								</div>
@@ -228,7 +228,14 @@
 				if($existe==0){
 					agregarNuevoProducto($_REQUEST['prod-carrito']);
 				}
-			}	
+			}
+			echo '<script> swal({
+				position: "top-end",
+				icon: "success",
+				title: "Producto agregado al carrito!",
+				button: false,
+				timer: 1500
+			  })</script>';
 		
 		}
 	}
