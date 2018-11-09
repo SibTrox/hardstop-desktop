@@ -44,6 +44,10 @@
     font-weight: bold;
 
 }
+.formu-compra{
+    display: flex;
+    flex-direction: row;
+}
 .botoncompra{
     text-align: center;
     background-color: #197fca;
@@ -52,17 +56,34 @@
     font-weight: 600;
     letter-spacing: 3px;
     border:1.5px solid #197fca;
-    width: 100%;
+    width: 62%;
     height: 13%;
     padding: 5px;
-
-
 }
 .botoncompra:hover{
     border:1.5px solid #197fca;
     color: #197fca;
     background-color: #fff;
-    
+}
+
+.botoncarrito{
+    text-align: center;
+    background-color: #197fca;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border:1.5px solid #197fca;
+    width: 35%;
+    height: 13%;
+    padding: 5px;
+    margin-left: 3%;
+}
+
+.botoncarrito:hover{
+    border:1.5px solid #000;
+    color: #000;
+    background-color: #fff;
 }
 
 .desc{

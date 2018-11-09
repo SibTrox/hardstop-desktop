@@ -67,8 +67,9 @@
 												$_SESSION['precio'] = $registro['precio'];
 										?>
 									</p>
-									<form action="#" method="get">
+									<form action="#" method="get" class="formu-compra">
 										<input name="compra" type="submit" class="botoncompra" value="COMPRAR">
+										<a class="botoncarrito" href='productoselect.php?c=<?php echo $_SESSION["id_producto"] ?>&&prod-carrito=<?php echo $_SESSION["id_producto"] ?>'> Agregar al carrito </a>
 									</form>
 									<img class="medios" src="img/medios.PNG">
 								</div>
@@ -209,6 +210,26 @@
 			.then((value) => {
 				window.location = "index.php" 
 			}) </script> ';
+		}
+	}
+
+	if(isset($_REQUEST['prod-carrito'])){
+		if(!isset($_SESSION['usuario'])){
+			echo '<script> swal ( "Oops" ,  "Debes iniciar sesion antes de realizar esta accion!" ,  "error" )
+			.then((value) => {
+				window.location = "index.php" 
+			}) </script> ';
+		}else{
+			if(!isset($_SESSION['carrito'])){
+				$nuevo_Prod=agregarPrimerProducto($_REQUEST['prod-carrito']);
+				$_SESSION['carrito']=$nuevo_Prod;
+			}else{
+				$existe=buscarProductoenCarrito($_REQUEST['prod-carrito']);
+				if($existe==0){
+					agregarNuevoProducto($_REQUEST['prod-carrito']);
+				}
+			}	
+		
 		}
 	}
 	?>

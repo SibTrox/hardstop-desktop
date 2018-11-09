@@ -10,7 +10,7 @@
 	       			</div>
 	       		</form>
 				<div class="botones-header">
-					<a href=""><img src="img/carrito.png" class="img3"></a>
+					<a href="carrito.php"><img src="img/carrito.png" class="img3"></a>
 					<input type="checkbox" name="activar3" id="activar3">
 					<?php
 					session_start();
@@ -20,6 +20,7 @@
 							<a href="#"><img  id="usuario-oculto" src="img/user.png" class="img4" for="activar3"></a>
 							<a href="#"><img  id="usuario" src="img/user-logged.png" class="img4" for="activar3"></a>
 							<?php
+							require_once('includes/funciones.php');
 						}else{
 							?>
 							<a href="#"><img  id="usuario" src="img/user.png" class="img4" for="activar3"></a>
