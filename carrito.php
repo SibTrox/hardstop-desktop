@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="icon/icon3/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon4/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon5/style.css">
+	<link rel="stylesheet" type="text/css" href="icon/icon6/style.css">
 	<script type="text/javascript" src="engine1/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>

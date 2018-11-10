@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="icon/icon3/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon4/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon5/style.css">
+	<link rel="stylesheet" type="text/css" href="icon/icon5/style.css">
 	<script type="text/javascript" src="engine1/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -225,6 +226,7 @@
 				$_SESSION['carrito']=$nuevo_Prod;
 			}else{
 				$existe=buscarProductoenCarrito($_REQUEST['prod-carrito']);
+				echo "existe";
 				if($existe==0){
 					agregarNuevoProducto($_REQUEST['prod-carrito']);
 				}

@@ -5,3 +5,38 @@
      margin-top: 7%;
     margin-bottom: 17%;
 }
+.lista-producto{
+	display : flex;
+	flex-direction: row;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.12);
+	margin-top: 30px;
+	width: 94%;
+	height: 5%;
+	margin-left: 1%;
+}
+.imagen-carrito{
+	width: 10%;
+	height: 15%;
+}
+.lista-detalles{
+	display: flex;
+	flex-direction: column;
+	margin-left: 0.5%;
+}
+.detalles{
+	font-weight: bold;	
+}
+.boton-borrar{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	background: red;
+	padding: 2%;
+	margin-left: 1%;
+	font-size: 36px;
+}
+.carrito-vacio{
+	
+}
