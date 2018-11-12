@@ -12,7 +12,7 @@
 	margin-top: 30px;
 	width: 94%;
 	height: 5%;
-	margin-left: 1%;
+	margin-left: 1.5%;
 }
 .imagen-carrito{
 	width: 10%;
@@ -34,9 +34,44 @@
 	color: white;
 	background: red;
 	padding: 2%;
-	margin-left: 1%;
+	margin-left: 40%;
 	font-size: 36px;
 }
 .carrito-vacio{
-	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 9%;
+    margin-bottom: 20%;
+}
+.precio-carrito{
+    font-size: 2em;
+    color: #197fca;
+    letter-spacing: 4px; 
+	font-weight: bold;
+	margin-right: 70%;
+}
+.botoncompra-carrito{
+    text-align: center;
+    background-color: #197fca;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border:1.5px solid #197fca;
+	width: 100%;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-right: 5%;
+}
+.botoncompra-carrito:hover{
+    border:1.5px solid #197fca;
+    color: #197fca;
+    background-color: #fff;
+}
+.totalcarrito{
+	display: flex;
+	flex-direction: row;
+	margin-left: 2%;
+	margin-top: 3%;
 }

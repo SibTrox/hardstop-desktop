@@ -34,6 +34,17 @@
         }
     }
 
+    function ocultarCajaCompraEnCarrito () {
+        document.getElementById('carrito').classList.add('ocultar')
+        document.getElementById('creditcard').classList.remove('ocultar')  
+    }
+
+    function ocultarCajaTarjetaEnCarrito () {
+        document.getElementById('carrito').classList.add('ocultar')
+        document.getElementById('creditcard').classList.add('ocultar')
+        document.getElementById('terminacompra').classList.remove('ocultar')
+    }
+
     function cerrarSesion () {
         window.sessionStorage.clear();
     }

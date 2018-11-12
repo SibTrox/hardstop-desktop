@@ -8,9 +8,9 @@ $cuerpo = '
 <body> 
 <h1>Hola '.$nombre.', bienvenido a Hardstop!</h1> 
 <p> 
-<b>Bienvenido a HardStop</b>. Estamos encantados de que te hayas registrado en la mejor pagina de venta de hardware de Argentina, aun te falta un paso, y es confirmar tu cuenta. Por favor ingresa el codigo de 5 digitos en la web de registro.
+<b>Bienvenido a HardStop</b>. Estamos encantados de que te hayas registrado en la mejor pagina de venta de hardware de Argentina, aun te falta un paso, y es confirmar tu cuenta. Por favor ingresa al enlance debajo de este mensaje.
 </p> 
-<h1>'. $cod.'</h1>
+<h3> http://hardstopp.000webhostapp.com/index.php?cod_unlock='.$cod.'</h3>
 </body> 
 </html> 
 '; 

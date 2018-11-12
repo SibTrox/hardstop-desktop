@@ -90,6 +90,23 @@
 	<?php include("includes/footer.html"); ?>
 		
 	</div>
+	<?php
+		if(isset($_REQUEST['cod_unlock'])){
+			$sql = "SELECT id_registro FROM registros WHERE cod_ver ='".$_REQUEST['cod_unlock']."'";
+			$query = $conexion->query($sql);
+			if($query->num_rows>0){
+				$insertvet="UPDATE registros SET cod_ver='1' WHERE cod_ver='".$_REQUEST['cod_unlock']."'";
+				$insertven = $conexion->query($insertvet);
+				echo '<script> swal({
+					position: "top-end",
+					icon: "success",
+					title: "Cuenta confirmada!",
+					button: false,
+					timer: 1500
+				  })</script>';
+			}
+		}
+	?>
 <div style=display:none;>
 </body>
 </html>

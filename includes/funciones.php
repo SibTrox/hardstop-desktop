@@ -46,8 +46,11 @@ function mostrarCarrito(){
 		$total=$total+($prod_compra[$indice]['cant']*$prod_compra[$indice]['precio']);
 		echo '</div>';
 	}	
-	
-	echo "Total: ".$total."<br>";
+	echo "<div class='totalcarrito'>";
+	echo "<p class='precio precio-carrito'>TOTAL $: ".$total."</p>";
+	echo "<form action='#' method='get' class='formu-compra'>";
+	echo "<input name='compra' type='submit' class='botoncompra-carrito' value='COMPRAR'>";
+	echo "</form></div>";
 }else{
 	echo "<h2 class='carrito-vacio'> Su carrito esta vacio ... por ahora </h2>";
 }

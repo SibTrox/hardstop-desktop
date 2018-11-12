@@ -171,12 +171,11 @@
 		echo "<script> window.location = 'index.php' </script>";
 	}
 	if(isset($_REQUEST['proceder'])){
-						$fechaventa=date('y/m/d');
 						$selecuser="SELECT id_registro FROM registros WHERE mail='".$_SESSION['usuario']."'";
 						$selventa = $conexion->query($selecuser);
 						while($userven = $selventa->fetch_assoc()){
 							
-							$insertvet="INSERT INTO ventas(fecha,id_usuario,total) VALUES ('$fechaventa','".$userven["id_registro"]."','".$_SESSION["precio"]."')";
+							$insertvet="INSERT INTO ventas(id_usuario,total) VALUES ('".$userven["id_registro"]."','".$_SESSION["precio"]."')";
 							$insertven = $conexion->query($insertvet);
 							$seleccionar = "SELECT id_venta FROM ventas ORDER BY id_venta DESC LIMIT 1";
 							$conter = $conexion->query($seleccionar);
