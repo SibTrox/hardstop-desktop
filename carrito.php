@@ -146,9 +146,10 @@
 		echo "<script> window.location = 'index.php' </script>";
 	}
 	if(isset($_REQUEST['proceder'])){
+		include("sql/conexion.php");
 		$selecuser="SELECT id_registro FROM registros WHERE mail='".$_SESSION['usuario']."'";
-		$selventa = $conexion->query($selecuser);
-		while($userven = $selventa->fetch_assoc()){
+		$selventa=$conexion->query($selecuser);
+		while($userven=$selventa->fetch_assoc()){
 			$insertvet="INSERT INTO ventas(id_usuario,total) VALUES (".$userven["id_registro"]."','".$total."')";
 			$insertven = $conexion->query($insertvet);
 			foreach ($prod_compra as $indice => $producto) {
