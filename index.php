@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/prodinfo.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
 	<script src="js/main.js"></script>
 	<style type="text/css">
 		

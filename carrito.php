@@ -11,11 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="icon/icon5/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon6/style.css">
 	<script type="text/javascript" src="engine1/jquery.js"></script>
-		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/lista.css" />
 	<LINK REL=StyleSheet HREF="css/stylexd.css">
 	<LINK REL=StyleSheet HREF="css/footer.css">
@@ -29,7 +28,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
 	<script src="js/main.js"></script>
 	<style type="text/css">
 		
@@ -131,7 +130,6 @@
 		echo "</div>"; 
 		include("includes/footer.html");
 	?>
-<script src="js/login.js"></script>
 <script src="js/main.js"></script>
 <script  src="js/index.js"></script>
 <?php

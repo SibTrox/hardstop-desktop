@@ -20,7 +20,7 @@
 	<LINK REL=StyleSheet HREF="css/login.css"> 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
 	<script src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/prodinfo.css">
 	<style type="text/css">
@@ -89,8 +89,6 @@
 	<?php include("includes/footer.html"); ?>
 		
 </div>
-<script src="js/login.js"></script>
-<script src="js/main.js"></script>
 <div style=display:none;>
 </body>
 </html>
