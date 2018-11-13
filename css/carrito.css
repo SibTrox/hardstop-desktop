@@ -49,7 +49,6 @@
     color: #197fca;
     letter-spacing: 4px; 
 	font-weight: bold;
-	margin-right: 70%;
 }
 .botoncompra-carrito{
     text-align: center;
@@ -62,7 +61,6 @@
 	width: 100%;
 	padding-left: 40px;
 	padding-right: 40px;
-	margin-right: 5%;
 }
 .botoncompra-carrito:hover{
     border:1.5px solid #197fca;
@@ -72,6 +70,7 @@
 .totalcarrito{
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
 	margin-left: 2%;
 	margin-top: 3%;
 }
