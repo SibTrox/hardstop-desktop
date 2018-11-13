@@ -165,6 +165,7 @@
 		}
 		unset($_SESSION['carrito']);
 		echo "<script> document.getElementById('terminacompra').classList.remove('ocultar') </script>";
+		echo "<script> document.getElementById('carrito').classList.add('ocultar') </script>";
 		
 		echo '<script> swal(
 			"Gracias por confiar en Hardstop!",
