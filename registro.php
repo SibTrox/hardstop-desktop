@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="caja">
-        <a href="index.php"><img class="logo" src="img/xd.png"></img></a>
+        <a href="index.php"><img class="logo" src="img/xd.png"></a>
         <div id="caja2">
             <form action="#" method="post">
                 <input type="mail" name="mail" class="form-css" placeholder="Usuario(EMAIL)" required>

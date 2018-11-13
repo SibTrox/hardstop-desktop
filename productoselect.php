@@ -215,9 +215,7 @@
 	if(isset($_REQUEST['prod-carrito'])){
 		if(!isset($_SESSION['usuario'])){
 			echo '<script> swal ( "Oops" ,  "Debes iniciar sesion antes de realizar esta accion!" ,  "error" )
-			.then((value) => {
-				window.location = "index.php" 
-			}) </script> ';
+			</script> ';
 		}else{
 			if(!isset($_SESSION['carrito'])){
 				$nuevo_Prod=agregarPrimerProducto($_REQUEST['prod-carrito']);
