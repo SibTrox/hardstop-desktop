@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2018 a las 19:49:40
+-- Tiempo de generación: 13-11-2018 a las 04:07:15
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -137,9 +137,15 @@ CREATE TABLE `prodxventa` (
 --
 
 INSERT INTO `prodxventa` (`id_prodxventa`, `cant`, `id_venta`, `id_prod`) VALUES
-(1, 1, 0, 14),
-(2, 1, 0, 4),
-(3, 1, 5, 37);
+(1, 1, 1, 44),
+(2, 1, 1, 44),
+(3, 1, 1, 44),
+(4, 10, 2, 3),
+(5, 1, 3, 2),
+(6, 1, 3, 2),
+(7, 1, 4, 20),
+(8, 1, 4, 52),
+(9, 2, 4, 73);
 
 -- --------------------------------------------------------
 
@@ -160,8 +166,8 @@ CREATE TABLE `registros` (
   `cp` int(5) NOT NULL,
   `tel` int(12) NOT NULL,
   `dni` varchar(10) NOT NULL,
-  `cod_ver` varchar(8) NOT NULL,
-  `fecha` date NOT NULL
+  `cod_ver` varchar(10) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -169,7 +175,7 @@ CREATE TABLE `registros` (
 --
 
 INSERT INTO `registros` (`id_registro`, `mail`, `password`, `nombre`, `apellido`, `calle`, `provincia`, `partido`, `localidad`, `cp`, `tel`, `dni`, `cod_ver`, `fecha`) VALUES
-(1, 'marceloparamio99@gmail.com', 'an12', 'Elon', 'Musk', 'tesla 85', 'Capital Federal', 'palermo', 'caba', 1564, 85859898, '45121212', '3456c', '2026-10-18');
+(1, 'enzonicolascorrea@gmail.com', '12345678', 'asd', 'asd', '123', 'Capital Federal', 'asd', 'asd', 1234, 1122334455, '42497380', '1', '2018-11-13 03:02:00');
 
 -- --------------------------------------------------------
 
@@ -179,7 +185,7 @@ INSERT INTO `registros` (`id_registro`, `mail`, `password`, `nombre`, `apellido`
 
 CREATE TABLE `ventas` (
   `id_venta` int(11) NOT NULL,
-  `fecha` date NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_usuario` int(11) NOT NULL,
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -189,11 +195,10 @@ CREATE TABLE `ventas` (
 --
 
 INSERT INTO `ventas` (`id_venta`, `fecha`, `id_usuario`, `total`) VALUES
-(1, '2018-11-01', 1, 6000),
-(2, '2018-11-01', 1, 36000),
-(3, '2018-11-01', 1, 7000),
-(4, '2018-11-01', 1, 1600),
-(5, '2018-11-01', 1, 1600);
+(1, '2018-11-13 01:00:01', 2, 17690),
+(2, '2018-11-13 01:01:02', 2, 79000),
+(3, '2018-11-13 01:18:32', 2, 14900),
+(4, '2018-11-13 02:54:50', 2, 32958);
 
 --
 -- Índices para tablas volcadas
@@ -237,7 +242,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `prodxventa`
 --
 ALTER TABLE `prodxventa`
-  MODIFY `id_prodxventa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_prodxventa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `registros`
@@ -249,7 +254,7 @@ ALTER TABLE `registros`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
