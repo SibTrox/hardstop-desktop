@@ -15,7 +15,7 @@ if(isset($_SESSION['admin'])){
 	<link rel="stylesheet" type="text/css" href="css/table.css">
 	<link rel="stylesheet" type="text/css" href="css/abm.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
-	
+	<link rel="stylesheet" href="icon/iconabm/style.css">
 	
 	<title>Administracion productos</title>
 	
@@ -28,15 +28,62 @@ if(isset($_SESSION['admin'])){
 	<div class="imagen-header">
 	<img src="img/logohd.png" class="logo">
 	<?php
-	include("includes/form.html");
+	include("includes/menu.html");
 	?>
 	</div>
 </header>
 <?php
 
 ?><div class="caja-body">
+	<div class="caja-header">
+	<form action="abm.php" method="get" class="formfiltro">	
+	<select name="tipo" class="selectfiltro">
+		<option value="0">Todos</option>
+		<option value="2">CPU</option>
+		<option value="3">Coolers</option>
+		<option value="4">Mothers y combos</option>
+		<option value="5">RAM</option>
+		<option value="6">GPU</option>
+		<option value="7">Fuente</option>
+		<option value="8">Almacenamiento</option>
+		<option value="9">Monitores</option>
+		<option value="10">Perifericos</option>
+		<option value="11">Gabinete</option>		
+	</select>	
+	<input type="submit" name="mostrar" value="Filtrar">
+</form>
+<form action="abm.php" method="get" class="formfiltro">
 	<?php
-include("includes/menu.html");
+	if (isset($_GET['grupo'])) {
+	echo '<input type="hidden" name="grupo" value="'.$_GET['grupo'].'">';
+	}
+	?>
+	<input type="hidden" name="grupo" value="">
+	<input type="text" name="p_buscar" placeholder="Palabra a buscar" >
+	<input type="submit" name="buscar" value="Buscar" class="buscar">
+</form>
+	<?php
+if (isset($_GET['tabla'])) {
+	$tabla=$_GET['tabla'];
+	if ($tabla==1) {
+		include("includes/form.html");
+				
+	}
+	else {
+		include("includes/form2.html");	
+	}
+}
+else {
+	include("includes/form.html");	
+}
+?>
+</div>
+	
+
+
+
+<?php
+
 if (isset($_POST['insertar'])) {
     
 	include("includes/insert.php");
@@ -49,6 +96,7 @@ if(isset($_GET['id'])){
 if(isset($_POST['modificar'])){
 	include("includes/edit.php");
 }
+
 include("includes/tabla.php");
 ?>
 </div>

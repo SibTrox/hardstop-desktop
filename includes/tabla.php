@@ -1,34 +1,5 @@
-<div class="caja-abm">
-	
-	<form action="abm.php" method="get" class="formfiltro">	
-	<select name="tipo" class="selectfiltro">
-		<option value="0">Todos</option>
-		<option value="2">CPU</option>
-		<option value="3">Coolers</option>
-		<option value="4">Mothers y combos</option>
-		<option value="5">RAM</option>
-		<option value="6">GPU</option>
-		<option value="7">Fuente</option>
-		<option value="8">Almacenamiento</option>
-		<option value="9">Monitores</option>
-		<option value="10">Perifericos</option>
-		<option value="11">Gabinete</option>		
-</select>	
-<input type="submit" name="mostrar" value="Filtrar">
-</form>
-<form action="abm.php" method="get" class="formfiltro">
-<?php
-if (isset($_GET['grupo'])) {
-	echo '<input type="hidden" name="grupo" value="'.$_GET['grupo'].'">';
-}
-?>
-<input type="hidden" name="grupo" value="">
-<input type="text" name="p_buscar" placeholder="Palabra a buscar" >
-<input type="submit" name="buscar" value="Buscar" class="buscar.abm">
-</form>
+<div class="caja-abm"><?php
 
-
-<?php
 include("filtros.php");
 if(!isset($_REQUEST['tabla'])){
 	?>
@@ -92,7 +63,7 @@ if(!isset($_REQUEST['tabla'])){
 						</select></td>
 						
 						<td><input type="submit" class="input-modificar-boton" name="modificar" value="Modificar"></td>
-						<td><a href="abm.php?id=<?php echo $registro['id_producto']; ?>" name="borrar" value="borrar">Borrar</a></td>
+						<td><a href="abm.php?id=<?php echo $registro['id_producto']; ?>" name="borrar" value="borrar"><span class="icon-bin"></span> </a></td>
 						
 						</form>
 					</tr>
@@ -100,15 +71,15 @@ if(!isset($_REQUEST['tabla'])){
 							}else{
 					?>
 					<tr>
-							<td class="editarborrar"><?php echo $registro['id_producto']; ?> </td>
+							<td class=""><?php echo $registro['id_producto']; ?> </td>
 							<td><?php echo $registro['nombre']; ?> </td>
 							<td><?php echo $registro['descripcion']; ?> </td>
 							<td class=""><img class="imgabm" src="img/prod/<?php echo $registro['imagen']; ?>"></td>
 							<td class="editarborrar"><?php echo $registro['precio']; ?> </td>
 							<td class="editarborrar"><?php echo $registro['stock']; ?> </td>
 							<td class="editarborrar"><?php echo $registro['tipo']; ?> </td>
-							<td class="editarborrar"><a href="abm.php?id_edit=<?php echo $registro['id_producto']; ?>"> Editar </a></td>
-							<td class="editarborrar"><a href="abm.php?id=<?php echo $registro['id_producto']; ?>"> Borrar </a></td>
+							<td class="editarborrar"><a href="abm.php?id_edit=<?php echo $registro['id_producto']; ?>"><span class="icon-pencil2"></span> </a></td>
+							<td class="editarborrar"><a href="abm.php?id=<?php echo $registro['id_producto']; ?>"> <span class="icon-bin"></span> </a></td>
 					
 					</tr>	
 					<?php
@@ -180,8 +151,8 @@ if(!isset($_REQUEST['tabla'])){
 					<option value="11">Gabinete</option>
 				</select></td>
 				
-				<td><input type="submit" class="input-modificar-boton" name="modificar" value="Modificar"></td>
-				<td><a href="abm.php?id=<?php echo $registro['id_producto']; ?>" name="borrar" value="borrar">Borrar</a></td>
+				<td><input type="submit" name="modificar"><span class="icon-checkbox-checked"></span></td>
+				<td><a href="abm.php?id=<?php echo $registro['id_producto']; ?>" name="borrar" value="borrar"><span class="icon-bin"></span></a></td>
 				
 				</form>
 			</tr>
@@ -189,15 +160,15 @@ if(!isset($_REQUEST['tabla'])){
 					}else{
 			?>
 			<tr>
-					<td class="editarborrar"><?php echo $registro['id_producto']; ?> </td>
+					<td class=""><?php echo $registro['id_producto']; ?> </td>
 					<td><?php echo $registro['nombre']; ?> </td>
 					<td><?php echo $registro['descripcion']; ?> </td>
 					<td class=""><img class="imgabm" src="img/prod/<?php echo $registro['imagen']; ?>"></td>
 					<td class="editarborrar"><?php echo $registro['precio']; ?> </td>
 					<td class="editarborrar"><?php echo $registro['stock']; ?> </td>
 					<td class="editarborrar"><?php echo $registro['tipo']; ?> </td>
-					<td class="editarborrar"><a href="abm.php?id_edit=<?php echo $registro['id_producto']; ?>"> Editar </a></td>
-					<td class="editarborrar"><a href="abm.php?id=<?php echo $registro['id_producto']; ?>"> Borrar </a></td>
+					<td class="editarborrar"><a class="a-abm" href="abm.php?id_edit=<?php echo $registro['id_producto']; ?>"><span class="icon-pencil2"></span> </a></td>
+					<td class="editarborrar"><a class="a-abm" href="abm.php?id=<?php echo $registro['id_producto']; ?>"><span class="icon-bin"></span> </a></td>
 			
 			</tr>	
 			<?php
@@ -255,7 +226,7 @@ if(!isset($_REQUEST['tabla'])){
 			while($registro = $consulta->fetch_assoc()){
 		?>
 		<tr>
-				<td class="editarborrar"><?php echo $registro['id_registro']; ?> </td>
+				<td class=""><?php echo $registro['id_registro']; ?> </td>
 				<td><?php echo $registro['mail']; ?> </td>
 				<td><?php echo $registro['nombre']; ?> </td>
 				<td class="editarborrar"><?php echo $registro['apellido']; ?> </td>
@@ -318,7 +289,7 @@ break;
 			while($registro = $consulta->fetch_assoc()){
 		?>
 		<tr>
-				<td class="editarborrar"><?php echo $registro['id_prodxventa']; ?> </td>
+				<td class=""><?php echo $registro['id_prodxventa']; ?> </td>
 				<td><?php echo $registro['id_usuario']; ?> </td>
 				<td><?php echo $registro['fecha']; ?> </td>
 				<td><?php echo $registro['id_prod']; ?> </td>

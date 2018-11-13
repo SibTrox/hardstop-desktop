@@ -1,7 +1,19 @@
+*{
+	font-family: 'fuente';
+	color: black;
+	text-decoration: none;
+	text-align: center;
+}
+@font-face {
+	font-family: 'fuente';
+	src: url('../font/gillsansstd-light.otf');
+	font-weight: normal;
+	font-style: normal;
+	}
 .imagen-header{
 display: flex;
 flex-direction: row;
-justify-content: space-between;
+
 }
 
 
@@ -9,12 +21,12 @@ h1{
 	text-align: center;
 }
 .caja-header{
-	width: 40%;
+	width: 15%;
 }
 .forminsert{
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	flex-direction: column;
+	width: 90%;
 	justify-content:space-around;
 	
 }
@@ -22,27 +34,29 @@ h1{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	
 
 }
 .inputform{
-	
+	padding: 5px;
+	margin: 10px 0;
 }
 .imgboton{
 	width: 30px;
 	height: 30px;
 }
 .select{
+	padding: 5px;
+	margin: 0 0px 10px 0;
 }
 .boton{
 	margin-right: 10px;
-	width: 30px; 
-	height: 30px;
+	width: 50px; 
+	height: 50px;
 }
 .texta{
-	resize: none;
-	width: 200px;
+	resize: vertical;
 	height: 100px;
+	margin-bottom: 10px;
 }
 .selectfiltro{
 	border: none;
@@ -52,6 +66,9 @@ h1{
     margin-right: 20px;
     border: 2px solid;
     
+}
+input[type=text]:focus {
+    background-color: lightblue;
 }
 .formfiltro{
 	display: flex;
@@ -63,12 +80,13 @@ h1{
 }
 .logo{
 	width: auto;
-	height: 150px;
+	height: 120px;
 	margin-left: 10px;
 }
 
 .caja-body{
 	display: flex;
+	
 }
 
 .upload {
@@ -83,14 +101,15 @@ h1{
     font-size: 1.25em;
     font-weight: 700;
     color: white;
-	background-color: #197FCA;
+	background-color: rgb(26, 115, 248);
 	height: 30px;
 	display: inline-block;
-	margin: 0px 10px 10px 10px;
+	margin-bottom: 5px;
 	transition-property: background-color;
 	transition-timing-function: linear;
 	transition-duration: 1s;
 	padding: 5px;
+	
 }
 
 .inputfile:focus + label,
@@ -106,4 +125,34 @@ h1{
 .inputfile:focus + label {
 	outline: 1px dotted #000;
 	outline: -webkit-focus-ring-color auto 5px;
+}
+.button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #197FCA;
+    color: #ffffff;
+    font-family: 'fuente';
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.button:hover,
+.button:focus {
+    background: #0053ba;
+}
+
+.button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.button:active {
+    transform: scale(0.99);
 }

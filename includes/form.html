@@ -1,9 +1,7 @@
-<div class="caja-header">
-	
-	
-	
+
 	<form action="includes/insert.php" method="post" class="forminsert" enctype="multipart/form-data">
 		<div class="boxinput">
+				<h2>Ingrese producto</h2>
 			<input type="text" class="inputform" name="nombre" required="required" placeholder="Nombre">
 			<input type="text" name="precio" required="required" min="0" placeholder="Precio" class="inputform">
 			<input type="number" name="stock" required="required" min="0" class="inputform" placeholder="Stock">
@@ -26,10 +24,10 @@
 		</div>
 		<textarea name="descripcion" rows="5" cols="300" placeholder="Descripcion" class="texta"></textarea>
 				<input id="file" class="upload inputfile" type="file" name="imagen" data-multiple-caption="{count} files selected" multiple>
-				<label for="file"><strong>Foto</strong></label>
-		<input type="image" name="insertar" value="insertar" class="boton" src="img/enviarboton.png">
-		<h2>Ingrese producto</h2>
+				<label for="file"><strong style="color:white">Foto</strong></label>
+		<input type="submit" name="insertar" value="Ingresar producto" class="button">
+		
 	</form>
-</div>
+
 
 

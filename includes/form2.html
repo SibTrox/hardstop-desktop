@@ -1,0 +1,31 @@
+ <form action="#" method="post" class="forminsert" enctype="multipart/form-data">
+            <div class="boxinput">
+                    <h2>Ingrese a la tabla correcta</h2>
+                <input type="text" class="inputform" name="nombre" required="required" placeholder="Nombre" readonly>
+                <input type="text" name="precio" required="required" min="0" placeholder="Precio" class="inputform" readonly>
+                <input type="number" name="stock" required="required" min="0" class="inputform" placeholder="Stock" readonly>
+                <select name="tipo" class="select" readonly>
+                    <option value="2">CPU</option>
+                    <option value="3">Coolers</option>
+                    <option value="4">Mothers y combos</option>
+                    <option value="5">RAM</option>
+                    <option value="6">GPU</option>
+                    <option value="7">Fuente</option>
+                    <option value="8">Almacenamiento</option>
+                    <option value="9">Monitores</option>
+                    <option value="10">Perifericos</option>
+                    <option value="11">Gabinete</option>
+                    <option value="12">PC Hogar & Oficina</option>
+                    <option value="13">PC Gamer</option>
+                    <option value="14">BATTLEBOX</option>
+                    <option value="15">GAMERBOX</option>
+                </select>
+            </div>
+            <textarea name="descripcion" rows="5" cols="300" placeholder="Descripcion" class="texta" readonly></textarea>
+                    <input id="file" class="upload inputfile" type="file" name="imagen" data-multiple-caption="{count} files selected" multiple>
+                    <label for="file"><strong>Foto</strong></label>
+            <input type="submit" name="" value="Tabla incorrecta" class="button">
+            
+        </form>
+
+    
