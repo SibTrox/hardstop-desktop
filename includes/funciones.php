@@ -45,9 +45,10 @@ function mostrarCarrito(){
 		echo '<a href=carrito.php?id_borra='.$producto['id_producto'].' class="boton-borrar"><span class="icon-bin"></span></a><br>';
 		$total=$total+($prod_compra[$indice]['cant']*$prod_compra[$indice]['precio']);
 		echo '</div>';
-	}	
+	}
+	$_SESSION['total'] = $total;	
 	echo "<div class='totalcarrito'>";
-	echo "<p class='precio precio-carrito'>TOTAL $: ".$total."</p>";
+	echo "<p class='precio precio-carrito'>TOTAL: $".$total."</p>";
 	echo "<form action='#' method='get' class='formu-compra'>";
 	echo "<input name='compra' type='submit' class='botoncompra-carrito' value='COMPRAR'>";
 	echo "</form></div>";

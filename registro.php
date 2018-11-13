@@ -93,10 +93,9 @@
     	}else{
     		if($pw === $vpw){
     		    if(strlen($codigo_postal)<5 && strlen($tel)>=8 && strlen($tel)<=12 && strlen($dni)>=7){
-        			$fecha = date('d/m/y');
-        			$cod = substr(md5(uniqid()), 0, 5);
-        			include("includes/mail.php");
-        			$xd="INSERT INTO registros (mail, password, nombre, apellido, calle, provincia, partido, localidad, cp, tel, dni, cod_ver, fecha) VALUES ('$mail', '$pw', '$nombre', '$apellido', '$calle', '$provincia', '$partido', '$localidad', '$codigo_postal', '$tel', '$dni', '$cod', '$fecha')";
+                    include("includes/mail.php");
+                    $cod = substr(md5(uniqid()), 0, 10);
+        			$xd="INSERT INTO registros (mail, password, nombre, apellido, calle, provincia, partido, localidad, cp, tel, dni, cod_ver) VALUES ('$mail', '$pw', '$nombre', '$apellido', '$calle', '$provincia', '$partido', '$localidad', '$codigo_postal', '$tel', '$dni', '$cod')";
         			$insertar = $conexion->query($xd);
         			echo '<script type="text/javascript">
         			alert("Registro exitoso, sera redirigido despues de esto");

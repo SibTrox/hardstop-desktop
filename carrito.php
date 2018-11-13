@@ -147,23 +147,25 @@
 	}
 	if(isset($_REQUEST['proceder'])){
 		include("sql/conexion.php");
+		//Obtener Id del usuario que realizo la compra
 		$selecuser="SELECT id_registro FROM registros WHERE mail='".$_SESSION['usuario']."'";
 		$selventa=$conexion->query($selecuser);
+		$prod_compra=$_SESSION['carrito'];
 		while($userven=$selventa->fetch_assoc()){
-			$insertvet="INSERT INTO ventas(id_usuario,total) VALUES (".$userven["id_registro"]."','".$total."')";
+			$insertvet="INSERT INTO ventas(id_usuario,total) VALUES ('".$userven["id_registro"]."','".$_SESSION['total']."')";
 			$insertven = $conexion->query($insertvet);
-			foreach ($prod_compra as $indice => $producto) {
-				$seleccionar = "SELECT id_venta FROM ventas ORDER BY id_venta DESC LIMIT 1";
-				$conter = $conexion->query($seleccionar);
-				while($cuevas = $conter->fetch_assoc()){
-					$xd = "INSERT INTO prodxventa(cant,id_venta,id_prod) VALUES ('".$producto['cant']."','".$cuevas['id_venta']."','".$_SESSION['id_producto']."')";
+			$seleccionar = "SELECT id_venta FROM ventas ORDER BY id_venta DESC LIMIT 1";
+			$conter = $conexion->query($seleccionar);
+			while($cuevas = $conter->fetch_assoc()){
+				foreach ($prod_compra as $indice => $producto) {
+					$xd = "INSERT INTO prodxventa(cant,id_venta,id_prod) VALUES ('".$producto['cant']."','".$cuevas['id_venta']."','".$producto['id_producto']."')";
 					$insertarxd = $conexion->query($xd);
 				}
 			}
 		}
-		
-		
+		unset($_SESSION['carrito']);
 		echo "<script> document.getElementById('terminacompra').classList.remove('ocultar') </script>";
+		
 		echo '<script> swal(
 			"Gracias por confiar en Hardstop!",
 			"En breve recibiras mas informaciones sobre tu compra en tu correo electronico!",
