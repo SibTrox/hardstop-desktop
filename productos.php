@@ -121,7 +121,8 @@
 				</div>
 				
 	</div>	
-</div>	<div class="paginas">
+</div>	
+	<div class="paginas">
 					<?php
 					if ($total_paginas > 1) {
 						if ($pagina != 1)
@@ -139,7 +140,7 @@
 							  echo '<a href="productos.php?pagina='.($pagina+1).'"><span class="icon-circle-right"></a>';
 					 }
 					?>
-				</div>
+		</div>
 
 	<?php include("includes/footer.html"); ?>
 		
