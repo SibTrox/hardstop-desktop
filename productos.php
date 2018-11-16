@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="icon/icon3/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon4/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon5/style.css">
+	<link rel="stylesheet" type="text/css" href="icon/icon7/style.css">
 	<script type="text/javascript" src="engine1/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -61,16 +62,16 @@
 				<ul class="ul-prod">
 					<h1 class="categoria">Categorias</h1>
 					
-					<li class="li-prod"><a href="productos.php?tipo=2" class="a-categoria" name="mostrar" value="2">CPU</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=3" class="a-categoria" name="mostrar" value="3">Coolers</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=4" class="a-categoria" name="mostrar" value="4">Mothers y combos</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=5" class="a-categoria" name="mostrar" value="5">Memorias RAM</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=6" class="a-categoria" name="mostrar" value="6">Placas de video</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=7" class="a-categoria" name="mostrar" value="7">Fuentes</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=8" class="a-categoria" name="mostrar" value="8">Almacenamiento</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=9" class="a-categoria" name="mostrar" value="9">Monitores</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=10" class="a-categoria" name="mostrar" value="10">Perifericos</a></li>
-					<li class="li-prod"><a href="productos.php?tipo=11" class="a-categoria" name="mostrar" value="11">Gabinetes</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=2&&pagina" class="a-categoria" name="mostrar" value="2">CPU</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=3&&pagina" class="a-categoria" name="mostrar" value="3">Coolers</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=4&&pagina" class="a-categoria" name="mostrar" value="4">Mothers y combos</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=5&&pagina" class="a-categoria" name="mostrar" value="5">Memorias RAM</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=6&&pagina" class="a-categoria" name="mostrar" value="6">Placas de video</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=7&&pagina" class="a-categoria" name="mostrar" value="7">Fuentes</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=8&&pagina" class="a-categoria" name="mostrar" value="8">Almacenamiento</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=9&&pagina" class="a-categoria" name="mostrar" value="9">Monitores</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=10&&pagina" class="a-categoria" name="mostrar" value="10">Perifericos</a></li>
+					<li class="li-prod"><a href="productos.php?tipo=11&&pagina" class="a-categoria" name="mostrar" value="11">Gabinetes</a></li>
 					
 					
 					
@@ -80,8 +81,29 @@
 					<?php
 					include("sql/conexion.php");
 					
-					include("includes/filtros-1.php");
-					while($registro = $consulta->fetch_assoc()){
+					//include("includes/filtros-1.php");
+					$consulta_prod = "SELECT * FROM productos";
+					$sel = $conexion->query($consulta_prod);
+					$num_total_registros = mysqli_num_rows($sel);
+					//Limito la busqueda
+					$TAMANO_PAGINA = 12;
+					//examino la página a mostrar y el inicio del registro a mostrar
+					$pagina = $_GET["pagina"];
+					if (!$pagina) {
+					$inicio = 0;
+					$pagina = 1;
+					}
+					else {
+					$inicio = ($pagina - 1) * $TAMANO_PAGINA;
+					}
+					//calculo el total de páginas
+					$total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
+					$consulta = "SELECT * FROM productos LIMIT ".$inicio."," . $TAMANO_PAGINA;
+					$consu = $conexion->query($consulta);
+
+
+
+					while($registro = $consu->fetch_assoc()){
 					?>
 					<a href="productoselect.php?c=<?php echo $registro['id_producto'];?>" class="link" ><div class="productosinfo">
 					<img class="imgprod" src="img/prod/<?php echo $registro['imagen']; ?>">
@@ -91,11 +113,33 @@
 					<h4>STOCK: <?php echo $registro['stock']; ?></h4>
 					</div></a><?php
 					}
+					
+					 
 					?>
+					
 
-				</div>	
+				</div>
+				
 	</div>	
-</div>
+</div>	<div class="paginas">
+					<?php
+					if ($total_paginas > 1) {
+						if ($pagina != 1)
+						   echo '<a href="'.$url.'?pagina='.($pagina-1).'"><span class="icon-circle-left"></a>';
+						   for ($i=1;$i<=$total_paginas;$i++) {
+							  if ($pagina == $i)
+								 //si muestro el índice de la página actual, no coloco enlace
+								 echo $pagina;
+							  else
+								 //si el índice no corresponde con la página mostrada actualmente,
+								 //coloco el enlace para ir a esa página
+								 echo '  <a href="productos.php?pagina='.$i.'">'.$i.'</a>  ';
+						   }
+						   if ($pagina != $total_paginas)
+							  echo '<a href="productos.php?pagina='.($pagina+1).'"><span class="icon-circle-right"></a>';
+					 }
+					?>
+				</div>
 
 	<?php include("includes/footer.html"); ?>
 		
