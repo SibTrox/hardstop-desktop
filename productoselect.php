@@ -106,7 +106,7 @@
 								
 							}
 							
-						//setcookie("precio", $registro['precio']);
+						
 						}
 						?>
 

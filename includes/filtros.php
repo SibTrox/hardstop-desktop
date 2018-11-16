@@ -30,10 +30,12 @@ else
 			$sql="SELECT * FROM registros";
 			break;
 		case 3:
-			$sql="SELECT p.id_prodxventa , p.cant , p.id_venta , p.id_prod , v.fecha , v.id_usuario , v.total , v.id_venta 
+			$sql="SELECT p.id_prodxventa , p.cant , p.id_venta , p.id_prod , v.fecha , v.id_usuario , v.total , v.id_venta,pr.nombre,pr.id_producto,pr.precio 
 			FROM prodxventa p
 			JOIN ventas	v
-			ON p.id_venta = v.id_venta";
+			ON p.id_venta = v.id_venta
+			JOIN productos pr
+			ON p.id_prod=pr.id_producto";
 			
 			break;
 		default:

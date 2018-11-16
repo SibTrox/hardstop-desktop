@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="icon/icon3/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon4/style.css">
 	<script type="text/javascript" src="engine1/jquery.js"></script>
-		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<LINK REL=StyleSheet HREF="css/stylexd.css">
 	<LINK REL=StyleSheet HREF="css/footer.css">

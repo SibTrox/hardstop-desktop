@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="icon/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon3/style.css">
 	<link rel="stylesheet" type="text/css" href="icon/icon4/style.css">
-	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="engine1/jquery.js"></script>
 	<LINK REL=StyleSheet HREF="css/stylexd.css">
@@ -50,8 +50,8 @@
 	<div class="ws_shadow"></div>
 	</div>
 		
-	<div class="triangulo1"></div>
-	<div class="triangulo2"></div>
+	<!--<div class="triangulo1"></div>
+	<div class="triangulo2"></div>-->
 	
 	<script type="text/javascript" src="engine1/wowslider.js"></script>
 	<script type="text/javascript" src="engine1/script.js"></script>
@@ -82,11 +82,11 @@
 
 				</div>
 	</div>
-	<div class="triangulo3"></div>
+	<!--<div class="triangulo3"></div>
 	<div class="triangulo4"></div>
 	<div class="barraazul">
 
-	</div>
+	</div>-->
 	<?php include("includes/footer.html"); ?>
 		
 	</div>

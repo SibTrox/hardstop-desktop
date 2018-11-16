@@ -278,6 +278,8 @@ break;
 							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=mail">Fecha</a></th>
 							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=nombre">Producto</a></th>
 							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=apellido">Cantidad</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=apellido">Precio Unitario</a></th>
+							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=calle">SubTotal</a></th>
 							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=calle">Total</a></th>
 							<th><a href="abm.php?tabla=<?php echo $_GET['tabla']?>&&c=calle">Numero de venta</a></th>
 					
@@ -287,13 +289,16 @@ break;
 					}
 		if($consulta->num_rows>0){
 			while($registro = $consulta->fetch_assoc()){
+				$subtotal=$registro['cant']*$registro['precio'];
 		?>
 		<tr>
 				<td class=""><?php echo $registro['id_prodxventa']; ?> </td>
 				<td><?php echo $registro['id_usuario']; ?> </td>
 				<td><?php echo $registro['fecha']; ?> </td>
-				<td><?php echo $registro['id_prod']; ?> </td>
+				<td><?php echo $registro['nombre']; ?> </td>
 				<td class="editarborrar"><?php echo $registro['cant']; ?> </td>
+				<td class="editarborrar"><?php echo $registro['precio']; ?> </td>
+				<td class="editarborrar"><?php echo $subtotal; ?> </td>
 				<td class="editarborrar"><?php echo $registro['total']; ?> </td>
 				<td class="editarborrar"><?php echo $registro['id_venta']; ?> </td>
 				

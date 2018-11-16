@@ -50,11 +50,21 @@
 						}else{
 							?>
 							<form id="formulario-inicio" action="#" class="form-login" method="post">
-							<input type="email" name="mail" class="form-css" placeholder="E-mail">
-							<input type="password" name="pw" class="form-css" placeholder="Contraseña">
-							<div class="toggler">
-  								<input id="toggler-1" name="toggler-1" type="checkbox" value="1"/>
-  								<label for="toggler-1" >
+								<?php 
+									//if (isset(cookie)) {
+										//echo '<input type="email" name="mail" class="form-css" placeholder="E-mail" value="mail">';
+										//echo '<input type="password" name="pw" class="form-css" placeholder="Contraseña" value="contra" >';
+
+
+									//}
+								 ?>
+							<input type="email" name="mail" class="form-css" placeholder="E-mail" required="required">
+							<input type="password" name="pw" class="form-css" placeholder="Contraseña" required="required">
+							<input type="checkbox" value="1" name="recorda">
+							
+							<!--<div class="toggler">
+  								<input id="toggler-1" name="toggler-1" type="checkbox" />
+  								<label for="toggler-1">
     							<svg class="toggler-on" version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 130.2 130.2">
       							<polyline class="path check" points="100.2,40.2 51.5,88.8 29.8,67.5 "></polyline>
    								 </svg>
@@ -65,7 +75,7 @@
 									</label>
 									<p style="color: white;">Recordame</p>  
 								
-							</div>
+							</div>-->
 							<input type="submit" name="enviar" class="login-enviar" value="Iniciar sesion">
 						</form>
 						<div id="opciones" class="login-links">	
@@ -79,14 +89,26 @@
 		</header>
 	<?php
 		if(isset($_REQUEST['enviar'])){
+	
+
+		
+							
+			/*if ($recordar==1) {
+				setcookie("user", $_SESSION['usuario'],time()+3600);
+			}*/
+			$pw=$_REQUEST['pw'];
+			$pwe=md5($pw);
 			require_once("sql/conexion.php");
-			$sql = "SELECT * FROM registros WHERE password = '".$_REQUEST['pw']."' AND mail = '".$_REQUEST['mail']."'";
+			$sql = "SELECT * FROM registros WHERE password = '".$pwe."' AND mail = '".$_REQUEST['mail']."'";
 			$consulta = $conexion->query($sql);
 			if($consulta->num_rows>0){
 				echo "<script> window.sessionStorage.setItem('user', 'logged') </script>";
 				echo "<script> usuarioLoggeado() </script>";
 				session_start();
 				$_SESSION['usuario'] = $_REQUEST['mail'];
+							if (isset($_REQUEST['recorda'])) {
+				echo "<script>alert('hola')</script>";
+		}
 				header('Location: index.php');
 			}else{
 				echo "<script> usuarioErroneo() </script>";
@@ -96,5 +118,9 @@
 			echo "<script> cerrarSesion() </script>";
 			session_destroy();
 			header('Location: index.php');
+		}
+		
+		if (isset($_REQUEST['recorda'])) {
+				echo "<script>alert('hola')</script>";
 		}
 	?>

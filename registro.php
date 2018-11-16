@@ -65,7 +65,11 @@
                     <input type="number" name="dni" class="form-css formulario1 box1" placeholder="DNI" required>
                 </div>
                 <input type="submit" class="boton-enviar" name="enviar" value="CREAR CUENTA">
+                 
             </form>
+            
+                <a href="index.php" class="boton-enviar boton-cancelar" name="cancelar">CANCELAR</a>
+           
         </div>
 	</div>
 <?php
@@ -95,7 +99,9 @@
     		    if(strlen($codigo_postal)<5 && strlen($tel)>=8 && strlen($tel)<=12 && strlen($dni)>=7){
                     include("includes/mail.php");
                     $cod = substr(md5(uniqid()), 0, 10);
-        			$xd="INSERT INTO registros (mail, password, nombre, apellido, calle, provincia, partido, localidad, cp, tel, dni, cod_ver) VALUES ('$mail', '$pw', '$nombre', '$apellido', '$calle', '$provincia', '$partido', '$localidad', '$codigo_postal', '$tel', '$dni', '$cod')";
+                    $pwe=md5($pw);
+
+        			$xd="INSERT INTO registros (mail, password, nombre, apellido, calle, provincia, partido, localidad, cp, tel, dni, cod_ver) VALUES ('$mail', '$pwe', '$nombre', '$apellido', '$calle', '$provincia', '$partido', '$localidad', '$codigo_postal', '$tel', '$dni', '$cod')";
         			$insertar = $conexion->query($xd);
         			echo '<script type="text/javascript">
         			alert("Registro exitoso, sera redirigido despues de esto");
@@ -109,6 +115,9 @@
     		}
     	}
     			
+    }
+    if(isset($_REQUEST['cancelar'])){
+         header('Location: index.php');
     }
 ?>
 <div style=display:none;>

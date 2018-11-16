@@ -1,3 +1,13 @@
+*{
+    
+    font-family: 'fuente';
+}
+@font-face {
+            font-family: 'fuente';
+            src: url('../font/gillsansstd-light.otf');
+            font-weight: normal;
+            font-style: normal;
+}
 body{
     background-image: url(../img/background.jpg);
     background-position: center center;
@@ -45,15 +55,17 @@ div a img
 .boton-enviar{
     border: 2px solid #3a95af;
     color: #3a95af;
-    width: 96%;
+    width: 97%;
     height: 34px; 
     margin-top: 33px; 
-    padding: 6px 12px;
-    margin: 10px; 
     font-size: 1em;
     background-color :  #2f2f30;
     line-height: 1.42857143;
-
+    text-decoration: none;
+}
+.boton-cancelar{
+    width: 96%;
+    padding-top: 10px;
 }
 .boton-enviar:hover{
     border: 2px solid #00c6ff;
@@ -72,6 +84,7 @@ div a img
     padding-bottom: 25px;
     background-color :  #2f2f30;
     border-radius: 5px 5px 5px 5px;
+        flex-direction: column;
 }
 #formulario1{
     display : flex;
