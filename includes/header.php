@@ -51,19 +51,19 @@
 							?>
 							<form id="formulario-inicio" action="#" class="form-login" method="post">
 								<?php 
-									//if (isset(cookie)) {
-										//echo '<input type="email" name="mail" class="form-css" placeholder="E-mail" value="mail">';
-										//echo '<input type="password" name="pw" class="form-css" placeholder="Contraseña" value="contra" >';
-
-
-									//}
+									if (isset($_COOKIE['user3'])) {
+										echo '<input type="email" name="mail" class="form-css" placeholder="E-mail" value="'.$_COOKIE['user3'].'">';			
+									}
+									else{?>
+										<input type="email" name="mail" class="form-css" placeholder="E-mail" required="required">
+									<?php }
 								 ?>
-							<input type="email" name="mail" class="form-css" placeholder="E-mail" required="required">
-							<input type="password" name="pw" class="form-css" placeholder="Contraseña" required="required">
-							<input type="checkbox" value="1" name="recorda">
 							
-							<!--<div class="toggler">
-  								<input id="toggler-1" name="toggler-1" type="checkbox" />
+							<input type="password" name="pw" class="form-css" placeholder="Contraseña" required="required">
+							<!--<input type="checkbox" name="recorda">-->
+							
+							<div class="toggler">
+  								<input id="toggler-1" name="recorda" type="checkbox"/>
   								<label for="toggler-1">
     							<svg class="toggler-on" version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 130.2 130.2">
       							<polyline class="path check" points="100.2,40.2 51.5,88.8 29.8,67.5 "></polyline>
@@ -75,7 +75,7 @@
 									</label>
 									<p style="color: white;">Recordame</p>  
 								
-							</div>-->
+							</div>
 							<input type="submit" name="enviar" class="login-enviar" value="Iniciar sesion">
 						</form>
 						<div id="opciones" class="login-links">	
@@ -92,10 +92,8 @@
 	
 
 		
-							
-			/*if ($recordar==1) {
-				setcookie("user", $_SESSION['usuario'],time()+3600);
-			}*/
+					
+			
 			$pw=$_REQUEST['pw'];
 			$pwe=md5($pw);
 			require_once("sql/conexion.php");
@@ -106,10 +104,12 @@
 				echo "<script> usuarioLoggeado() </script>";
 				session_start();
 				$_SESSION['usuario'] = $_REQUEST['mail'];
-							if (isset($_REQUEST['recorda'])) {
-				echo "<script>alert('hola')</script>";
-		}
-				header('Location: index.php');
+				if (isset($_REQUEST['recorda'])) {
+					setcookie("user3", $_SESSION['usuario'],time()+3600,"/");
+					header('Location: index.php');
+				}else{			
+					header('Location: index.php');
+				}
 			}else{
 				echo "<script> usuarioErroneo() </script>";
 			}
@@ -120,7 +120,5 @@
 			header('Location: index.php');
 		}
 		
-		if (isset($_REQUEST['recorda'])) {
-				echo "<script>alert('hola')</script>";
-		}
+		
 	?>
