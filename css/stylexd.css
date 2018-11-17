@@ -119,11 +119,13 @@ position: absolute;
 	letter-spacing: 10px;
 	color: #000;
 	margin-left: 20px;
+	font-weight: bold;
 }
 .paginaac{
 	font-size:20px;
 	color:#197fca;
 	margin-left: 10px;
+	font-weight: bold;
 
 }
 
